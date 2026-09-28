@@ -1,0 +1,72 @@
+# === Module TP — Configuration ===
+
+# --- Constantes ---
+max-homes: 20
+tpa-expiration-seconds: 180
+
+# --- Couleurs ---
+colors:
+  primary: "GOLD"
+  success: "GREEN"
+  error: "RED"
+  info: "GRAY"
+
+# --- Messages ---
+messages:
+  # /sethome
+  home-set: "Home {name} défini."
+  home-limit: "Tu as atteint la limite de {max} homes."
+  home-exists: "Le home {name} existe déjà. Supprime-le d'abord."
+
+  # /home
+  home-teleported: "Téléporté au home {name}."
+  home-not-found: "Home introuvable : {name}"
+
+  # /delhome
+  home-deleted: "Home {name} supprimé."
+
+  # /homes
+  homes-header: "══ Tes homes ({count}/{max}) ══"
+  homes-entry: "- {name}"
+  homes-empty: "Tu n'as aucun home."
+
+  # /tpa
+  tpa-sent: "Demande de TP envoyée à {player}."
+  tpa-received: "{player} veut se téléporter à toi. /tpaccept ou /tpdeny"
+  tpa-expired: "La demande de TP de {player} a expiré."
+  tpa-no-self: "Tu ne peux pas te TP à toi-même."
+  tpa-already-pending: "Tu as déjà une demande en cours vers {player}."
+
+  # /tpaccept
+  tpa-accepted: "Tu as accepté la demande de {player}."
+  tpa-accepted-notify: "{player} a accepté ta demande. Téléportation..."
+  tpa-no-pending: "Tu n'as aucune demande de TP en attente."
+
+  # /tpdeny
+  tpa-denied: "Tu as refusé la demande de {player}."
+  tpa-denied-notify: "{player} a refusé ta demande."
+
+  # /setwarp
+  warp-set: "Warp {name} créé."
+  warp-exists: "Le warp {name} existe déjà."
+
+  # /warp
+  warp-teleported: "Téléporté au warp {name}."
+  warp-not-found: "Warp introuvable : {name}"
+
+  # /delwarp
+  warp-deleted: "Warp {name} supprimé."
+
+  # /warps
+  warps-header: "══ Warps disponibles ({count}) ══"
+  warps-entry: "- {name}"
+  warps-empty: "Aucun warp défini."
+
+  # /back
+  back-teleported: "Téléporté à ta position précédente."
+  back-no-position: "Aucune position de retour disponible."
+
+  # Génériques
+  player-not-found: "Joueur introuvable : {value}"
+  no-permission: "Tu n'as pas la permission."
+  player-only: "Cette commande ne peut être utilisée que par un joueur."

@@ -1,0 +1,14 @@
+# === SemiRP — Configuration globale ===
+
+# --- Modules actifs ---
+modules:
+  economy: true
+  tp: true
+  shop: false
+  jobs: false
+
+# --- Base de données ---
+database:
+  archive:
+    retention-days: 90
+    schedule: "05:00"
