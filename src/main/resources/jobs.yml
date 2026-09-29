@@ -1,0 +1,118 @@
+# === Module Métiers : Configuration ===
+
+# --- Règles générales ---
+max-simultaneous: 2
+max-level: 200
+
+# --- Formules de progression (modèle C) ---
+# XP requise pour passer du niveau N à N+1 : floor + a x N^xp-curve-exponent
+# XP gagnée par action   : xp_base x (1 + xp-gain-k x ln(N+1))
+# Argent gagné par action : money_base x (1 + money-gain-k x ln(N+1))
+xp-curve-exponent: 1.9
+xp-gain-k: 0.3
+money-gain-k: 0.18
+
+# Multiplicateur appliqué uniquement aux chiffres d'XP affichés (1, 10 ou 100).
+# Ne change ni la progression réelle, ni l'argent gagné.
+display-multiplier: 1
+
+# --- Fonctionnement ---
+# Les gains d'argent sont calculés à chaque action, puis versés en une transaction
+# groupée par métier toutes les N secondes (et à la déconnexion).
+payout-interval-seconds: 10
+# Sauvegarde périodique de la progression (et à la déconnexion / à l'arrêt).
+save-interval-seconds: 60
+# Affiche "+XP / +€" au-dessus de la barre d'inventaire à chaque action récompensée.
+show-action-bar: true
+
+# --- Métiers ---
+# La clé doit correspondre au champ "metier" du fichier JSON (plugins/SemiRP/jobs/<metier>.json).
+# floor et a : courbes recalibrées pour atteindre le niveau 200 en environ 149 h.
+jobs:
+  mineur:
+    display-name: "Mineur"
+    floor: 433.6
+    a: 0.4525
+  bucheron:
+    display-name: "Bûcheron"
+    floor: 165.1
+    a: 0.1723
+  fermier:
+    display-name: "Fermier"
+    floor: 92.4
+    a: 0.0964
+  chasseur:
+    display-name: "Chasseur"
+    floor: 466.0
+    a: 0.4863
+  pecheur:
+    display-name: "Pêcheur"
+    floor: 112.4
+    a: 0.1173
+  alchimiste:
+    display-name: "Alchimiste"
+    floor: 169.1
+    a: 0.1764
+  forgeron:
+    display-name: "Forgeron"
+    floor: 75.1
+    a: 0.0783
+
+# --- Couleurs ---
+colors:
+  primary: "GOLD"
+  success: "GREEN"
+  error: "RED"
+  info: "GRAY"
+
+# --- Messages ---
+messages:
+  # Gains
+  action-gain: "{job} : +{xp} XP, +{money}"
+  level-up: "Niveau {level} atteint en {job} !"
+
+  # /jobs
+  list-header: "══ Métiers disponibles ({count}) ══"
+  list-entry: "- {job} ({id}) : {actions} actions"
+  list-entry-joined: "- {job} ({id}) : {actions} actions [exercé]"
+  no-jobs-loaded: "Aucun métier chargé. Vérifie le dossier plugins/SemiRP/jobs/."
+
+  # /jobs join
+  join-success: "Tu es maintenant {job}."
+  join-rejoined: "Tu reprends le métier {job} au niveau {level}."
+  join-already: "Tu exerces déjà le métier {job}."
+  join-limit: "Tu exerces déjà {max} métiers. Quittes-en un avec /jobs leave <métier>."
+
+  # /jobs leave
+  leave-confirm: "Quitter {job} fera passer ton niveau de {level} à {new-level}, définitivement. Confirme avec /jobs leave {id} confirm"
+  leave-success: "Tu as quitté le métier {job}. Niveau conservé : {level}."
+  leave-not-joined: "Tu n'exerces pas le métier {job}."
+
+  # /jobs info
+  info-header: "══ {job} (gains au niveau {level}) ══"
+  info-category: "- {category} : {count} action(s), {xp} XP, {money}"
+
+  # /jobs stats
+  stats-header: "══ Tes métiers ({count}/{max}) ══"
+  stats-entry: "{job} : niveau {level}/{max} {bar} {percent}% ({xp}/{required} XP)"
+  stats-entry-max: "{job} : niveau {level} (maximum atteint)"
+  stats-empty: "Tu n'exerces aucun métier. Rejoins-en un avec /jobs join <métier>."
+
+  # /jobs top
+  top-header: "══ Classement : {scope} ══"
+  top-entry: "{rank}. {player} : {job} niveau {level}"
+  top-empty: "Aucun joueur classé."
+
+  # /jobs reload
+  reload-success: "Configuration des métiers rechargée ({count} métiers)."
+
+  # Génériques
+  job-not-found: "Métier introuvable : {value}"
+  usage-jobs: "Usage : /jobs [join|leave|info|stats|top|reload]"
+  usage-join: "Usage : /jobs join <métier>"
+  usage-leave: "Usage : /jobs leave <métier>"
+  usage-info: "Usage : /jobs info <métier>"
+  no-permission: "Tu n'as pas la permission."
+  player-only: "Cette commande ne peut être utilisée que par un joueur."
+  error-generic: "Une erreur est survenue."
+  error-detailed: "Erreur : {details}"

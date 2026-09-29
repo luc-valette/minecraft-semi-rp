@@ -4,8 +4,8 @@
 modules:
   economy: true
   tp: true
-  shop: false
-  jobs: false
+  shop: true
+  jobs: true
 
 # --- Base de données ---
 database:

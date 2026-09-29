@@ -1,0 +1,72 @@
+# === Module Shop : Configuration ===
+
+# --- Constantes ---
+# Nombre maximum d'offres actives par joueur (0 = illimité).
+# Au-delà de 45, les offres en trop ne s'affichent pas dans "Mes offres".
+max-listings-per-player: 20
+# Prix unitaire maximum autorisé (protection contre les fautes de frappe)
+max-unit-price: 1000000.0
+
+# --- Couleurs ---
+colors:
+  primary: "GOLD"
+  success: "GREEN"
+  error: "RED"
+  info: "GRAY"
+
+# --- Interface (GUI) ---
+gui:
+  title-main: "Shop ({page}/{pages})"
+  title-mine: "Mes offres ({count}/{max})"
+  info: "{count} offre(s) en vente"
+  button-previous: "Page précédente"
+  button-next: "Page suivante"
+  button-mine: "Mes offres"
+  button-back: "Retour au shop"
+  # Lignes ajoutées sous chaque offre du shop
+  # Placeholders : {seller} {price} {quantity} {stack}
+  lore-listing:
+    - ""
+    - "Vendeur : {seller}"
+    - "Prix unitaire : {price}"
+    - "Stock : {quantity}"
+    - ""
+    - "Clic : acheter 1"
+    - "Shift + clic : acheter {stack}"
+  # Lignes ajoutées sous chaque offre dans "Mes offres"
+  lore-mine:
+    - ""
+    - "Prix unitaire : {price}"
+    - "Stock : {quantity}"
+    - ""
+    - "Clic : retirer de la vente"
+
+# --- Messages ---
+messages:
+  # /shop sell
+  sell-success: "Mis en vente : {quantity}x {item} à {price} l'unité."
+  sell-no-item: "Tiens l'item à vendre dans ta main."
+  sell-invalid-price: "Prix invalide : {value}"
+  sell-invalid-quantity: "Quantité invalide : {value}"
+  sell-not-enough: "Tu n'as que {available} exemplaire(s) de cet item."
+  sell-limit: "Tu as atteint la limite de {max} offres actives."
+
+  # Achat (GUI)
+  buy-success: "Tu as acheté {quantity}x {item} à {seller} pour {total}."
+  buy-notify-seller: "{buyer} t'a acheté {quantity}x {item} pour {total}."
+  buy-own: "C'est ta propre offre. Utilise /shop mine pour la retirer."
+  buy-unavailable: "Cette offre n'est plus disponible."
+  insufficient-funds: "Solde insuffisant."
+
+  # Retrait d'une offre (GUI "Mes offres")
+  withdraw-success: "{quantity}x {item} récupéré(s)."
+  withdraw-partial: "{quantity}x {item} récupéré(s). {remaining} restent en vente (inventaire plein)."
+
+  # Génériques
+  no-space: "Pas assez de place dans ton inventaire."
+  usage-shop: "Usage : /shop, /shop sell <prix> [quantité], /shop mine"
+  usage-sell: "Usage : /shop sell <prix_unitaire> [quantité]"
+  no-permission: "Tu n'as pas la permission."
+  player-only: "Cette commande ne peut être utilisée que par un joueur."
+  error-generic: "Une erreur est survenue."
+  error-detailed: "Erreur : {details}"

@@ -4,6 +4,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 
 import java.util.Map;
 
@@ -16,18 +17,26 @@ public class MessageHelper {
     }
 
     public void send(CommandSender target, String messageKey, String colorKey, Map<String, String> placeholders) {
+        target.sendMessage(build(messageKey, colorKey, placeholders));
+    }
+
+    public void send(CommandSender target, String messageKey, String colorKey) {
+        send(target, messageKey, colorKey, Map.of());
+    }
+
+    /** Affiche le message au-dessus de la barre d'inventaire au lieu du chat. */
+    public void sendActionBar(Player target, String messageKey, String colorKey, Map<String, String> placeholders) {
+        target.sendActionBar(build(messageKey, colorKey, placeholders));
+    }
+
+    private Component build(String messageKey, String colorKey, Map<String, String> placeholders) {
         String message = config.getString("messages." + messageKey, "Message introuvable : " + messageKey);
 
         for (Map.Entry<String, String> entry : placeholders.entrySet()) {
             message = message.replace("{" + entry.getKey() + "}", entry.getValue());
         }
 
-        NamedTextColor color = getColor(colorKey);
-        target.sendMessage(Component.text(message).color(color));
-    }
-
-    public void send(CommandSender target, String messageKey, String colorKey) {
-        send(target, messageKey, colorKey, Map.of());
+        return Component.text(message).color(getColor(colorKey));
     }
 
     private NamedTextColor getColor(String colorKey) {

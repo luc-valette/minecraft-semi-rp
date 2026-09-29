@@ -1,0 +1,143 @@
+{
+  "metier": "bucheron",
+  "description": "Table de récompenses du métier Bûcheron. XP et argent par action. Le champ action_type indique si la récompense se déclenche à la casse du bloc (BREAK).",
+  "actions": [
+    {
+      "categorie": "bois_courants",
+      "items": [
+        {
+          "id": "chop_oak",
+          "label": "Couper du chêne",
+          "block": "OAK_LOG",
+          "action_type": "BREAK",
+          "xp": 1.5,
+          "money": 0.5
+        },
+        {
+          "id": "chop_spruce",
+          "label": "Couper du sapin",
+          "block": "SPRUCE_LOG",
+          "action_type": "BREAK",
+          "xp": 1.5,
+          "money": 0.5
+        },
+        {
+          "id": "chop_birch",
+          "label": "Couper du bouleau",
+          "block": "BIRCH_LOG",
+          "action_type": "BREAK",
+          "xp": 1.5,
+          "money": 0.5
+        }
+      ]
+    },
+    {
+      "categorie": "champignons_geants",
+      "items": [
+        {
+          "id": "chop_red_mushroom",
+          "label": "Couper un champignon rouge",
+          "block": "RED_MUSHROOM_BLOCK",
+          "action_type": "BREAK",
+          "xp": 2.5,
+          "money": 1.0
+        },
+        {
+          "id": "chop_brown_mushroom",
+          "label": "Couper un champignon brun",
+          "block": "BROWN_MUSHROOM_BLOCK",
+          "action_type": "BREAK",
+          "xp": 2.5,
+          "money": 1.0
+        },
+        {
+          "id": "chop_mushroom_stem",
+          "label": "Couper un pied de champignon",
+          "block": "MUSHROOM_STEM",
+          "action_type": "BREAK",
+          "xp": 2.0,
+          "money": 0.8
+        }
+      ]
+    },
+    {
+      "categorie": "bois_intermediaires",
+      "items": [
+        {
+          "id": "chop_jungle",
+          "label": "Couper du jungle",
+          "block": "JUNGLE_LOG",
+          "action_type": "BREAK",
+          "xp": 4.0,
+          "money": 2.0
+        },
+        {
+          "id": "chop_acacia",
+          "label": "Couper de l'acacia",
+          "block": "ACACIA_LOG",
+          "action_type": "BREAK",
+          "xp": 4.0,
+          "money": 2.0
+        },
+        {
+          "id": "chop_dark_oak",
+          "label": "Couper du chêne noir",
+          "block": "DARK_OAK_LOG",
+          "action_type": "BREAK",
+          "xp": 4.5,
+          "money": 2.3
+        }
+      ]
+    },
+    {
+      "categorie": "bois_speciaux",
+      "items": [
+        {
+          "id": "chop_mangrove",
+          "label": "Couper du mangrove",
+          "block": "MANGROVE_LOG",
+          "action_type": "BREAK",
+          "xp": 7.0,
+          "money": 4.0
+        },
+        {
+          "id": "chop_cherry",
+          "label": "Couper du cerisier",
+          "block": "CHERRY_LOG",
+          "action_type": "BREAK",
+          "xp": 7.5,
+          "money": 4.5
+        },
+        {
+          "id": "chop_bamboo",
+          "label": "Couper du bambou",
+          "block": "BAMBOO_BLOCK",
+          "action_type": "BREAK",
+          "xp": 6.0,
+          "money": 3.5
+        }
+      ]
+    },
+    {
+      "categorie": "bois_nether",
+      "items": [
+        {
+          "id": "chop_crimson",
+          "label": "Couper du crimson",
+          "block": "CRIMSON_STEM",
+          "action_type": "BREAK",
+          "xp": 10.0,
+          "money": 6.0
+        },
+        {
+          "id": "chop_warped",
+          "label": "Couper du warped",
+          "block": "WARPED_STEM",
+          "action_type": "BREAK",
+          "xp": 10.0,
+          "money": 6.0
+        }
+      ]
+    }
+  ]
+}

@@ -56,6 +56,13 @@ commands:
   back:
     description: Retourner à sa position précédente
     usage: /back
+  shop:
+    description: Ouvrir le shop joueur ou mettre un item en vente
+    usage: /shop [sell <prix> [quantité] | mine]
+  jobs:
+    description: Gérer ses métiers
+    usage: /jobs [join|leave|info|stats|top|reload]
+    aliases: [metiers, job]
 
 permissions:
   semirp.eco.admin:
@@ -63,4 +70,7 @@ permissions:
     default: op
   semirp.tp.admin:
     description: Permet de créer et supprimer des warps
+    default: op
+  semirp.jobs.admin:
+    description: Permet d'utiliser /jobs reload
     default: op
