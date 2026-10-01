@@ -91,6 +91,7 @@ messages:
   # /jobs info
   info-header: "══ {job} (gains au niveau {level}) ══"
   info-category: "- {category} : {count} action(s), {xp} XP, {money}"
+  info-item: "   • {label} : {money} ({xp} XP)"
 
   # /jobs stats
   stats-header: "══ Tes métiers ({count}/{max}) ══"

@@ -179,6 +179,17 @@ public class JobsCommand implements TabExecutor {
                     "count", String.valueOf(actions.size()),
                     "xp", range(xpMin, xpMax, false),
                     "money", range(moneyMin, moneyMax, true)));
+
+            // Détail : chaque item du métier qui rapporte de l'argent, à ce niveau
+            for (JobAction action : actions) {
+                double money = jobs.moneyGain(action.baseMoney(), level);
+                if (money <= 0) continue;
+                double xp = jobs.xpGain(action.baseXp(), level) * jobs.getDisplayMultiplier();
+                messages.send(sender, "info-item", "info", Map.of(
+                        "label", action.label(),
+                        "money", range(money, money, true),
+                        "xp", range(xp, xp, false)));
+            }
         }
     }
 

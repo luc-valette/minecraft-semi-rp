@@ -179,12 +179,23 @@ public class JobLoader {
                     ? null : "type de potion inconnu '" + potion.toUpperCase(Locale.ROOT) + "'";
         }
 
-        Material material = Material.matchMaterial(target);
+        Material material = materialByKey(target);
         if (material == null) {
             return "bloc ou item inconnu '" + target + "'";
         }
         if ((type == ActionType.BREAK || type == ActionType.PLANT) && !material.isBlock()) {
             return "'" + target + "' n'est pas un bloc, impossible à casser ou planter";
+        }
+        return null;
+    }
+
+    /** Résout un Material par sa clé en majuscules (DIAMOND_ORE, CHAIN...), comme le fait le listener. */
+    private static Material materialByKey(String upperKey) {
+        for (Material m : Material.values()) {
+            if (m.isLegacy()) continue;
+            if (m.getKey().getKey().toUpperCase(Locale.ROOT).equals(upperKey)) {
+                return m;
+            }
         }
         return null;
     }
