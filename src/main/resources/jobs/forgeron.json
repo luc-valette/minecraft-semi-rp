@@ -103,7 +103,7 @@
         { "id": "craft_anvil",           "label": "Crafter une enclume",  "item": "ANVIL",           "action_type": "CRAFT", "xp": 20.0, "money": 11.00 },
         { "id": "craft_bucket",          "label": "Crafter un seau",      "item": "BUCKET",          "action_type": "CRAFT", "xp": 4.0,  "money": 2.00 },
         { "id": "craft_shears",          "label": "Crafter des cisailles","item": "SHEARS",          "action_type": "CRAFT", "xp": 3.0,  "money": 1.50 },
-        { "id": "craft_chain",           "label": "Crafter une chaîne",   "item": "CHAIN",           "action_type": "CRAFT", "xp": 2.0,  "money": 0.80 },
+        { "id": "craft_chain",           "label": "Crafter une chaîne",   "item": "IRON_CHAIN",           "action_type": "CRAFT", "xp": 2.0,  "money": 0.80 },
         { "id": "craft_cauldron",        "label": "Crafter un chaudron",  "item": "CAULDRON",        "action_type": "CRAFT", "xp": 9.0,  "money": 4.50 },
         { "id": "craft_hopper",          "label": "Crafter un hopper",    "item": "HOPPER",          "action_type": "CRAFT", "xp": 7.0,  "money": 3.50 },
         { "id": "craft_minecart",        "label": "Crafter un minecart",  "item": "MINECART",        "action_type": "CRAFT", "xp": 6.5,  "money": 3.20 },
